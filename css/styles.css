@@ -59,14 +59,13 @@ main {
 	background-color: var(--secundario);
 }
 
-.contenedor label {
+label {
 	font-size: 2rem;
 	margin-bottom: 0.5rem;
 	font-weight: 700;
 }
 
-.contenedor input,
-.contenedor select {
+.contenedor input {
 	margin-bottom: 1rem;
 	padding: 0.5rem;
 	font-size: 1.5rem;
@@ -74,25 +73,6 @@ main {
 	border: var(--borde);
 	font-family: var(--fuente);
 	width: 100%;
-}
-
-.contenedor input:hover,
-.contenedor select:hover {
-	border: var(--borde);
-}
-
-.botones {
-	display: flex;
-	flex-direction: row;
-	justify-content: flex-end;
-	gap: 2rem;
-}
-
-@media (max-width: 576px) {
-	.botones {
-		flex-direction: column;
-		gap: 1rem;
-	}
 }
 
 .boton {
@@ -105,6 +85,7 @@ main {
 	font-weight: 500;
 	font-family: var(--fuente);
 	cursor: pointer;
+	align-self: flex-end;
 }
 
 .boton:hover {
@@ -121,7 +102,7 @@ h3 {
 
 #original,
 #ordenado {
-	display: none;
+	display: grid;
 	grid-template-columns: 1fr 1fr;
 	background-color: var(--blanco);
 	text-align: center;
@@ -141,7 +122,7 @@ p:hover {
 }
 
 .arregloL {
-	display: none;
+	display: inline;
 }
 
 .footer {
@@ -153,4 +134,12 @@ p:hover {
 	background-color: var(--primario);
 	padding: 2rem;
 	color: var(--blanco);
+}
+
+@media (max-width: 576px) {
+
+	#original,
+	#ordenado {
+		grid-template-columns: 1fr;
+	}
 }

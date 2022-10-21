@@ -1,7 +1,7 @@
 'use strict';
 
 window.addEventListener('DOMContentLoaded', () => {
-	document.getElementById("btnCalcular").addEventListener('click', () => {
+	const btnCalcular = () => {
 		// * Diseña una función que reciba como argumento un arreglo de valores enteros de 20 posiciones , regrese el valor promedio de los elementos del arreglo.
 		const promedio = (array) => {
 			let promedio = 0;
@@ -23,7 +23,7 @@ window.addEventListener('DOMContentLoaded', () => {
 		// * Diseñe una función que reciba como argumento un arreglo de 20 valores numéricos enteros, ordene los valores del arreglo de mayor a menor.
 		const ordenar = (array) => {
 			let ordenado = array.slice();
-			return ordenado.sort((a, b) => a - b);
+			return ordenado.sort((a, b) => b - a);
 		}
 
 		// * Imprimir datos en el dom
@@ -33,7 +33,6 @@ window.addEventListener('DOMContentLoaded', () => {
 				content += `<p>${item}</p>\n`;
 			});
 			elemento.innerHTML = content;
-			elemento.style.display = "grid";
 		}
 
 
@@ -47,10 +46,11 @@ window.addEventListener('DOMContentLoaded', () => {
 		const ordenadoArray = ordenar(randomArray);
 		document.getElementById('promedio').value = promedioNumber;
 		document.getElementById('pares').value = paresNumber;
-		document.getElementById("lblOriginal").style.display = "inline";
-		document.getElementById("lblOrdenado").style.display = "inline";
 
 		imprimirDOM(randomArray, document.getElementById("original"));
 		imprimirDOM(ordenadoArray, document.getElementById("ordenado"));
-	});
+	};
+
+	document.getElementById("btnCalcular").addEventListener('click', btnCalcular);
+	btnCalcular();
 });
