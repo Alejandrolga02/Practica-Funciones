@@ -1,0 +1,156 @@
+:root {
+	--primario: #A359A0;
+	--secundario: #D59DC5;
+	--claro: #EADADA;
+	--fondo: #F6D4D2;
+	--boton: #b44f97;
+	--botonDarken: #7f366a;
+	--negro: #212121;
+	--blanco: #fff;
+	--blancoFocus: #e6e6e6;
+	--borde: 1px solid #bbb;
+	--fuente: "Open Sans", "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+
+html {
+	box-sizing: border-box;
+	font-size: 62.5%;
+}
+
+*,
+*:before,
+*:after {
+	box-sizing: inherit;
+}
+
+body {
+	margin: 0;
+	background-color: var(--claro);
+	font-family: var(--fuente);
+}
+
+.header {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 10rem;
+	background-color: var(--primario);
+	padding: 2rem;
+	color: var(--blanco);
+}
+
+main {
+	min-height: calc(100vh - 20rem);
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.contenedor {
+	display: flex;
+	flex-direction: column;
+	margin: 5rem 0rem;
+	width: 54rem;
+	max-width: 90%;
+	border: var(--borde);
+	padding: 2rem;
+	border-radius: 0.5rem;
+	background-color: var(--secundario);
+}
+
+.contenedor label {
+	font-size: 2rem;
+	margin-bottom: 0.5rem;
+	font-weight: 700;
+}
+
+.contenedor input,
+.contenedor select {
+	margin-bottom: 1rem;
+	padding: 0.5rem;
+	font-size: 1.5rem;
+	border-radius: 0.2rem;
+	border: var(--borde);
+	font-family: var(--fuente);
+	width: 100%;
+}
+
+.contenedor input:hover,
+.contenedor select:hover {
+	border: var(--borde);
+}
+
+.botones {
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-end;
+	gap: 2rem;
+}
+
+@media (max-width: 576px) {
+	.botones {
+		flex-direction: column;
+		gap: 1rem;
+	}
+}
+
+.boton {
+	background-color: var(--boton);
+	color: var(--blanco);
+	font-size: 1.8rem;
+	padding: 0.75rem 2rem;
+	border: var(--borde);
+	border-radius: 0.5rem;
+	font-weight: 500;
+	font-family: var(--fuente);
+	cursor: pointer;
+}
+
+.boton:hover {
+	background-color: var(--botonDarken);
+}
+
+h1 {
+	font-size: 2.4rem;
+}
+
+h3 {
+	font-size: 2rem;
+}
+
+#original,
+#ordenado {
+	display: none;
+	grid-template-columns: 1fr 1fr;
+	background-color: var(--blanco);
+	text-align: center;
+	border: 1px solid var(--negro);
+	margin-bottom: 1rem;
+}
+
+p {
+	display: inline;
+	margin: 0;
+	border: 1px solid var(--negro);
+	font-size: 1.8rem;
+}
+
+p:hover {
+	background-color: var(--blancoFocus);
+}
+
+.arregloL {
+	display: none;
+}
+
+.footer {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+	height: 10rem;
+	background-color: var(--primario);
+	padding: 2rem;
+	color: var(--blanco);
+}
